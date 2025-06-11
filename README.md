@@ -122,6 +122,39 @@ Headers: Authorization: Bearer <token>
 JWT_SECRET_KEY=your_jwt_secret
 ```
 
+## 🗄 Setup database
+
+Assicurati di aver creato un database MySQL vuoto (es. `gallery_app`), poi esegui il file SQL:
+
+```bash
+mysql -u your_user -p your_database_name < schema.sql
+
+-- schema.sql
+
+CREATE TABLE IF NOT EXISTS user (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role ENUM('standard', 'premium') DEFAULT 'standard'
+);
+
+CREATE TABLE IF NOT EXISTS image (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  url TEXT NOT NULL,
+  uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS token_blacklist (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  token_id VARCHAR(255) NOT NULL,
+  blacklisted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 ---
 
 ## 📌 Note finali
