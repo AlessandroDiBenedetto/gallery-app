@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>User Authentication</h1>
+
+      <!-- Registration Form -->
+      <div id="register-section">
+        <h2>Register</h2>
+        <form id="register-form">
+          <input
+            type="text"
+            id="reg-username"
+            placeholder="Username"
+            required
+          />
+          <input type="email" id="reg-email" placeholder="Email" required />
+          <input
+            type="password"
+            id="reg-password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Register</button>
+        </form>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-section">
+        <h2>Login</h2>
+        <form id="login-form">
+          <input
+            type="text"
+            id="login-username"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <p>
+          Don't have an account?
+          <a href="#" id="go-to-register">Register here</a>
+        </p>
+      </div>
+
+      <!-- Logout Section -->
+      <div id="logout-section" style="display: none">
+        <h2>Welcome!</h2>
+        <button id="logout-btn">Logout</button>
+      </div>
+
+      <!-- Image Upload Section (to be shown after login) -->
+      <div id="image-upload-section" style="display: none">
+        <h2>Upload an Image</h2>
+        <form id="upload-image-form">
+          <input
+            type="text"
+            id="image-title"
+            placeholder="Image Title"
+            required
+          />
+          <input type="url" id="image-url" placeholder="Image URL" required />
+          <button type="upload-image-from">Upload</button>
+        </form>
+      </div>
+
+      <!-- Image List Section (to show images after login) -->
+      <div id="image-list-section" style="display: none">
+        <h2>Your Images</h2>
+        <div id="image-list"></div>
+      </div>
+    </div>
+
+    <script src="./js/app.js" defer></script>
+  </body>
+</html>
