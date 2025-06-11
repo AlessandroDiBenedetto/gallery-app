@@ -25,6 +25,11 @@ backend/
 │   └── image.js               # Funzioni per gestione immagini
 ├── db.js                      # Connessione al database
 └── server.js                  # Entry point dell'app
+frontend/
+├── js
+|  ├── app.js                  # manipolazione DOM
+├── index.html
+├── style.css
 ```
 
 ## 🧪 API principali
