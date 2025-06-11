@@ -26,7 +26,7 @@ backend/
 ├── db.js                      # Connessione al database
 └── server.js                  # Entry point dell'app
 frontend/
-├── js
+├── js/
 |  ├── app.js                  # manipolazione DOM
 ├── index.html
 ├── style.css
