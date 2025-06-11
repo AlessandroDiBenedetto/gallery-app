@@ -128,7 +128,7 @@ Assicurati di aver creato un database MySQL vuoto (es. `gallery_app`), poi esegu
 
 ```bash
 mysql -u your_user -p your_database_name < schema.sql
-
+```
 -- schema.sql
 
 CREATE TABLE IF NOT EXISTS user (
